@@ -5,4 +5,4 @@ class Chat():
     client.send(bytes("Welcome to dms!"+
                         "Start by typing your name and pressing enter!"))
     addresses[client] = client_address
-        Thread(target=handle_client, args=(client,)).start()
+        
