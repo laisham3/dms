@@ -10,8 +10,6 @@ def accept_incoming_connections():
         Thread(target=handle_client, args=(client,)).start()
         
 def handle_client(client):  
-    """Handles a single client connection."""
-
     name = client.recv(BUFSIZ).decode("utf8")
     welcome = 'Welcome %s! If you ever want to quit, type {quit} to exit.' % name
     client.send(bytes(welcome, "utf8"))
