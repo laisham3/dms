@@ -5,7 +5,8 @@ def accept_incoming_connections():
     while True:
         client, client_address = SERVER.accept()
         print("%s:%s has connected." % client_address)
-        print("Welcome to dms! Type your name and press enter to start!")
+        print("Welcome to dms!") 
+        name = (input(Type your name and press enter to start: ))
         client.send(bytes("Welcome to dms! Type your name and press enter to start!", "utf8"))
         addresses[client] = client_address
         Thread(target=handle_client, args=(client,)).start()
